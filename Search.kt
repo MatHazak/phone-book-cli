@@ -30,13 +30,13 @@ class Search {
         fun<T: Comparable<T>> binary(target: T, list: List<T>): Boolean {
             var left = 0
             var right = list.lastIndex
-            while (left < right) {
+            while (left <= right) {
                 val mid = (left + right) / 2
                 if (list[mid] == target) return true
                 if (list[mid] > target) {
-                    right = mid
+                    right = mid - 1
                 } else {
-                    left = mid
+                    left = mid + 1
                 }
             }
             return false
