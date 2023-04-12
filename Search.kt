@@ -32,11 +32,10 @@ class Search {
             var right = list.lastIndex
             while (left <= right) {
                 val mid = (left + right) / 2
-                if (list[mid] == target) return true
-                if (list[mid] > target) {
-                    right = mid - 1
-                } else {
-                    left = mid + 1
+                when {
+                    list[mid] == target -> return true
+                    list[mid] > target -> right = mid - 1
+                    else -> left = mid + 1
                 }
             }
             return false
